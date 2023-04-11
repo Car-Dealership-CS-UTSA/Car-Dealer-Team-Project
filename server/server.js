@@ -16,11 +16,19 @@ app.use(express.json());
 // two arguments: path of endpoint which is just /message
 // callback which can be middleware function or series/array 
 // of middleware functions
-app.get('/message', (req, res) => {
-  // returning json object, so use res.json()
-  answer = connect();
-  res.json({message: string});
-});
+// app.get('/message', (req, res) => {
+//   // returning json object, so use res.json()
+//   res.json({message: string});
+// });
+app.get('/message', getMessageFromDB);
+
+function getMessageFromDB(req, res){
+  const sql = "select * from hello";
+  con.query(sql, function(err, result) {
+    if (err) throw err;
+    res.json({message: result});
+  });
+}
 
 // this part actually connects to database
 // sql needs to be connected to front end
@@ -51,21 +59,22 @@ app.listen(8000, () => {
 });
 
 // all of these are function calls
-con.connect(function(err) {
-				if (err) throw err;
-				// getting sql from command line
-				// needs to be changed for ui
-				var sql = prompt("what sql");
-				// actually sending the sql code to server
-				// not sure why fields is necessary, but it is
-				con.query(sql, function(err, result, fields) {
-								if (err) throw err;
-								console.log(result);
-				});
-
-				// closes connection after it's done
-				con.end(function(err) {
-								if (err) throw err;
-								console.log("ending connection");
-				});
-});
+// trying to put equivalent in app.get
+// con.connect(function(err) {
+// 				if (err) throw err;
+// 				// getting sql from command line
+// 				// needs to be changed for ui
+// 				var sql = prompt("what sql");
+// 				// actually sending the sql code to server
+// 				// not sure why fields is necessary, but it is
+// 				con.query(sql, function(err, result, fields) {
+// 								if (err) throw err;
+// 								console.log(result);
+// 				});
+// 
+// 				// closes connection after it's done
+// 				con.end(function(err) {
+// 								if (err) throw err;
+// 								console.log("ending connection");
+// 				});
+// });
