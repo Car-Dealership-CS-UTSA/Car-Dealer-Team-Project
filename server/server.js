@@ -20,7 +20,7 @@ app.use(express.json());
 //   // returning json object, so use res.json()
 //   res.json({message: string});
 // });
-app.get('/message', getMessageFromDB);
+app.get('/', getMessageFromDB(req, res));
 
 function getMessageFromDB(req, res){
   const sql = "select * from hello";
