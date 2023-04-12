@@ -23,10 +23,10 @@ app.use(express.json());
 app.get('/', getMessageFromDB(req, res));
 
 function getMessageFromDB(req, res){
-  const sql = "select * from hello";
+  const sql = "select * from car_record";
   con.query(sql, function(err, result) {
     if (err) throw err;
-    res.json({message: result});
+    res.json({ message: result });
   });
 }
 
@@ -38,7 +38,7 @@ var con = mysql.createConnection({
 				host: "localhost",
 				user: "root",
 				password: "password",
-				database: "helloworld"
+				database: "cardealership"
 });
 
 // defunct first prototype

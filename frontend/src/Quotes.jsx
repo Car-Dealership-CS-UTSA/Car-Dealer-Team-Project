@@ -18,7 +18,6 @@ return (
       <button onClick={getText}>
         hello
       </button>
-      // putting text on screen
       <h1>{text}</h1>
     </div>
   )
