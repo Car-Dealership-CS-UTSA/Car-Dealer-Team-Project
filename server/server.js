@@ -36,7 +36,7 @@ function getMessageFromDB(req, res){
 var con = mysql.createConnection({
 				host: "localhost",
 				user: "root",
-				password: "A!!d4tU&sCq?",
+				password: "password",
 				database: "cardealership"
 });
 
