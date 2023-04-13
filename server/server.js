@@ -13,17 +13,16 @@ app.use(cors());
 app.use(express.json());
 
 // creates a GET route
-// two arguments: path of endpoint which is just /message
+// two arguments: path of endpoint which is just /
 // callback which can be middleware function or series/array 
 // of middleware functions
-// app.get('/message', (req, res) => {
-//   // returning json object, so use res.json()
-//   res.json({message: string});
-// });
-app.get('/', getMessageFromDB(req, res));
+app.get('/', (req, res) => {
+getMessageFromDB(req, res)
+});
 
+// getting query from json made on Quotes.jsx
 function getMessageFromDB(req, res){
-  const sql = "select * from car_record";
+  const sql = req.query.value;
   con.query(sql, function(err, result) {
     if (err) throw err;
     res.json({ message: result });
@@ -37,44 +36,11 @@ function getMessageFromDB(req, res){
 var con = mysql.createConnection({
 				host: "localhost",
 				user: "root",
-				password: "password",
+				password: "A!!d4tU&sCq?",
 				database: "cardealership"
 });
-
-// defunct first prototype
-// con.connect(function(err) {
-// 				// throws error if not connected
-// 				if (err) throw err;
-// 				console.log("connected!");
-// 				// query database
-// 				con.query(sql, function (err, result) {
-// 								if (err) throw err;
-// 								console.log("Result: " + result);
-// 				});
-// });
 
 // starts server
 app.listen(8000, () => {
   console.log('server running on port 8000');
 });
-
-// all of these are function calls
-// trying to put equivalent in app.get
-// con.connect(function(err) {
-// 				if (err) throw err;
-// 				// getting sql from command line
-// 				// needs to be changed for ui
-// 				var sql = prompt("what sql");
-// 				// actually sending the sql code to server
-// 				// not sure why fields is necessary, but it is
-// 				con.query(sql, function(err, result, fields) {
-// 								if (err) throw err;
-// 								console.log(result);
-// 				});
-// 
-// 				// closes connection after it's done
-// 				con.end(function(err) {
-// 								if (err) throw err;
-// 								console.log("ending connection");
-// 				});
-// });
