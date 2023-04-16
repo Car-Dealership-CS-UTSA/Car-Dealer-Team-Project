@@ -16,7 +16,7 @@ function CarComponent({ car }) {
   );
 }
 function Quotes() {
-  const [text, setText] = useState([]);
+  const [cars, setCars] = useState([]);
 
 // requesting that get defined in server.js
 function getText() {
@@ -27,17 +27,17 @@ function getText() {
     }
   }).then(response => {
     // setting text with setText
-    setText(response.data.message);
+    setCars(response.data.message);
   });
 }
 
 return (
     <div>
       <button onClick={getText}>
-        hello
+        get cars
       </button>
-      {text.length > 0 ? (
-        <CarComponent car={text} />
+      {cars.length > 0 ? (
+        cars.map(car => <CarComponent key={car.record_number} car={car} />)
       ) : (
         <p>No cars to display</p>
       )}
