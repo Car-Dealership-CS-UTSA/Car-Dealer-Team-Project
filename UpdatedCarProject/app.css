@@ -1,0 +1,219 @@
+body {
+    /*background-color: rgb(27, 38, 59);*/
+    color: white;
+  }
+  
+  #row1 {
+    padding: 3em;
+    padding-left: 10em;
+  }
+  
+  #row2 {
+    padding: 3em;
+    padding-left: 10em;
+  }
+  
+  /* card logic */
+  #cards {
+    display: inline-flex;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 100%;
+    margin: 0;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    width: 100%;
+  }
+  
+  #cards {
+    /*background-color: #0d1b2a;*/
+    justify-content: space-evenly;
+  }
+  
+  #about {
+    background-image: url(imgs/img6.jpg);
+  }
+  
+  #catalog {
+    background-image: url(imgs/img5.jpg);
+  }
+  
+  #search {
+    background-image: url(imgs/img4.jpg);
+  }
+  
+  #contact {
+    background-image: url(imgs/img7.jpg);
+  }
+  
+  .card {
+    color: white;
+    background-size: cover;
+    padding: 12rem 0 0;
+    max-width: 35ch;
+    border-radius: 1rem;
+    overflow: hidden;
+    margin-bottom: 1em;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+  
+    transition: transform 500ms ease;
+  }
+  
+  .cards-project {
+    padding: 8rem 0 0;
+    max-width: 40ch;
+  }
+  
+  .card:hover,
+  .card:focus-within {
+    transform: scale(1.05);
+  }
+  
+  .card-content {
+    --padding: 2rem;
+    padding: var(--padding);
+    /*background: linear-gradient(
+      hsl(0 0% 0% / 0),
+      hsl(0 0% 0% / 0.2) 10%,
+      hsl(0 0% 0% / 1)
+    );*/
+  }
+  
+  .card-body {
+    color: rgb(255 255 255 / 0.9);
+    line-height: 18px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  
+  .card-body-projects {
+    color: rgb(255 255 255 / 0.9);
+    line-height: 22px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  
+  .card-title {
+    position: relative;
+    width: max-content;
+    /* max-width: 100%; */
+  }
+  
+  .card-title::after {
+    content: '';
+    position: absolute;
+    height: 4px;
+    left: calc(var(--padding) * -1);
+    bottom: -2.5px;
+    width: calc(95% + var(--padding));
+    /*background: #415a77;*/
+  
+    transform-origin: left;
+    transition: transform 500ms ease;
+  }
+  
+  .card:hover .card-title::after {
+    transform: scaleX(1);
+  }
+  
+  @media (hover) {
+    .card-content {
+      transform: translateY(62%);
+      transition: transform 500ms ease;
+    }
+    .card:hover .card-content,
+    .card:focus-within .card-content {
+      transform: translateY(0);
+      transition: transform 500ms ease;
+    }
+  
+    .card:focus-within .card-content {
+      transition-duration: 0ms;
+    }
+  
+    .card-title::after {
+      transform: scaleX(0);
+    }
+  }
+  
+  .button {
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    background-color: #415a77;
+    padding: 0.5em 1.2em;
+    border-radius: 0.25rem;
+  }
+  
+  .button:hover,
+  .button:focus {
+    background-color: #778da9;
+  }
+  
+  @media screen and (max-width: 609px) {
+    .card {
+      max-width: 36ch;
+      padding: 7rem 0 0;
+      overflow: hidden;
+    }
+  
+    .intro {
+      padding-left: 12%;
+    }
+  }
+  
+  /* card logic end */
+  
+  .main {
+    margin: 5%;
+    /*background: hsl(215, 19%, 19%);*/
+    height: 100 vh;
+    width: 100 vw;
+    display: flex;
+    align-items: center;
+  }
+  .left {
+    padding-left: 8px;
+    padding-right: 8px;
+    margin-left: 8px;
+    margin-right: 8px;
+    /* background: grey; */
+    height: 50%;
+    width: 25%;
+    border: 2px solid white;
+  }
+  
+  .innerLeft {
+    padding: 5%;
+    margin: 5%;
+    /*background: rgba(1, 1, 1, 0.349);*/
+  }
+  
+  .right {
+    padding-left: 8px;
+    padding-right: 8px;
+    margin-left: 8px;
+    margin-right: 8px;
+    background: red;
+    height: 50%;
+    width: 75%;
+    border: 2px solid white;
+  }
+  #results table, #results td, #results th{
+    border: 2px solid white;
+    border-collapse: collapse;
+    padding: 10px;
+    margin: 20px 0;
+
+  }
+  #results>table>tr>th{
+    color: white;
+  }
+  #results>table>tr>td{
+    color: white;
+  }
+  .table-bordered>thead>tr>th{
+    color: white;
+  }
