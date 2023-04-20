@@ -112,14 +112,14 @@
              //echo "ID: " . $row["record_number"] . " - Company: " . $row["company"] . " - Model: " . $row["model"] . "Year: " . $row["year"] . "Price: " . $row["price"] 
              // . "Miles Driven: " . $row["mileage"] . "Color: " . $row["color"] . "<br>" . "State";
               echo "<tr>";
-              echo "<td>".$row['record_number']."</td>";
-              echo "<td>".$row['company']."</td>";
-              echo "<td>".$row['model']."</td>";
-              echo "<td>".$row['year']."</td>";
-              echo "<td>".$row['price']."</td>";
-              echo "<td>".$row['mileage']."</td>";
-              echo "<td>".$row['color']."</td>";
-              echo "<td>".$row['state']."</td>";
+              echo "<td style='color:#0000ff'>".$row['record_number']."</td>";
+              echo "<td style='color:#0000ff'>".$row['company']."</td>";
+              echo "<td style='color:#0000ff'>".$row['model']."</td>";
+              echo "<td style='color:#0000ff'>".$row['year']."</td>";
+              echo "<td style='color:#0000ff'>".$row['price']."</td>";
+              echo "<td style='color:#0000ff'>".$row['mileage']."</td>";
+              echo "<td style='color:#0000ff'>".$row['color']."</td>";
+              echo "<td style='color:#0000ff'>".$row['state']."</td>";
               echo "</tr>";
          }
          
