@@ -17,12 +17,14 @@ app.use(express.json());
 // callback which can be middleware function or series/array 
 // of middleware functions
 app.get('/', (req, res) => {
+console.log("received something")
 getMessageFromDB(req, res)
 });
 
 // getting query from json made on Quotes.jsx
 function getMessageFromDB(req, res){
   const sql = req.query.value;
+  console.log("received request");
   con.query(sql, function(err, result) {
     if (err) throw err;
     res.json({ message: result });
@@ -36,7 +38,7 @@ function getMessageFromDB(req, res){
 var con = mysql.createConnection({
 				host: "localhost",
 				user: "root",
-				password: "password",
+				password: "Password", // needs to be changed for it to connect
 				database: "cardealership"
 });
 

@@ -19,11 +19,11 @@ function Quotes() {
   const [cars, setCars] = useState([]);
 
 // requesting that get defined in server.js
-function getText() {
+function getText(request) {
   axios.get("http://localhost:8000/", { 
     crossdomain: true,
     params: {
-      value: "select * from car_record"
+      value: request
     }
   }).then(response => {
     // setting text with setText

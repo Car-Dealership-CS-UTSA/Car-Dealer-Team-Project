@@ -19,6 +19,91 @@
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
       crossorigin="anonymous"
+
+      import React, {useState} from "react";
+      import axios from "axios";
+     
+      function CarComponent({ car }) {
+        return (
+          <div key={car.record_number}>
+            <h2>Record Number: {car.record_number}</h2>
+            <p>Price: {car.price}</p>
+            <p>Company: {car.company}</p>
+            <p>Model: {car.model}</p>
+            <p>Year: {car.year}</p>
+            <p>Mileage: {car.mileage}</p>
+            <p>Color: {car.color}</p>
+            <p>State: {car.state}</p>
+          </div>
+        );
+      }
+      function Quotes() {
+        const [cars, setCars] = useState([]);
+
+
+      function submitForm() {
+        var submitButton = document.getElementById("submitButton");
+        submitButton.addEventListener("click", function(event) {
+          event.preventDefault();
+          var requestConditions = ""
+          var carMake = document.getElementById("carMake").value;
+          if (selectMax.length != 0) {
+            var selectMake = "company = " + carMake + " ";
+          }
+          var carType = document.getElementById("carType").value;
+          if (carType.length != 0) {
+            var selectType = "model = "+ carType + " ";
+          }
+          var carEngine = document.getElementById("engine").value;
+          if (carEngine.length != 0) {
+            var selecEngine = "engine = " carEngine + " ";
+          }
+          var minYear = document.getElementById("minYear").value;
+          if (minYear.length != 0) {
+            var selectMinYear = "year &lt; " + minYear + " ";
+          }
+          var maxYear = document.getElementById("maxYear").value;
+          if (maxYear.length != 0) {
+            var selectMaxYear = "year &gt; " + maxYear + " ";
+          }
+          var minMile = document.getElementById("minMile").value;
+          if (minMile.length != 0) {
+            var selectMinMile = "mileage &lt; " + minMile + " ";
+          }
+          var maxMile = document.getElementById("maxMile").value;
+          if (maxMile.length != 0) {
+            var selectMaxMile = "mileage &gt; " + maxMile + " ";
+          }
+          var minPrice = document.getElementById("minPrice").value;
+          if (minPrice.length != 0) {
+            var selectMinPrice = "price &lt; " + minPrice + " ";
+          }
+          var maxPrice = document.getElementById("minPrice").value;
+          if (maxPrice.length != 0) {
+            var selectMaxPrice = "price &gt; " + maxPrice + " ";
+          }
+          var request = "select * from cardealer where " + selectMake + selectType +  
+            selectMinYear + selectMaxYear + selectMinMile + selectMaxMile + selectMinPrice + selectMaxPrice;
+          var result = getText(request).then(result => {
+            var rightDiv.document.getElementById("right");
+            rightDiv.innerHTML = "result: " + cars;
+          }).catch(error => {
+            console.error(error);
+          });
+        }
+      }
+      // requesting that get defined in server.js
+      function getText(request) {
+        axios.get("http://localhost:8000/", { 
+          crossdomain: true,
+          params: {
+            value: request
+          }
+        }).then(response => {
+          // setting text with setText
+          setCars(response.data.message);
+        });
+      }
     ></script>
     <!-- Start of navbar -->
     <nav
