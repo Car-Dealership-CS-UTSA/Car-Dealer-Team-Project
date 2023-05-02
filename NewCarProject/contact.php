@@ -88,7 +88,7 @@ session_start();
         </div>
     </nav>
     <!-- end navbar -->
-    <h1>Contact Car Dealership</h1>
+    <h1 class="text-center">Contact Car Dealership</h1>
     
     <br><center><strong>123 S Buisness IH 12</strong><br>
     <strong>Townplace, TX 12345<br>
