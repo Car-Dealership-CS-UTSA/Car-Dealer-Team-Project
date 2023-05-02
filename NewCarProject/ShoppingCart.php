@@ -89,48 +89,86 @@ session_start();
     </nav>
     <!-- end navbar -->
     <h1>Shopping Cart</h1>
+        <div>
+        <label for="carMake">Make:</label>
+            <select id="carMake" name="carMake">
+              <option value="BMW">BMW</option>
+              <option value="Mercedes-Benz">Mercedes-Benz</option>
+              <option value="Audi">Audi</option>
+              <option value="Toyota">Toyota</option>
+              <option value="Renault">Renault</option>
+              <option value="Volkswagen">Volkswagen</option>
+              <option value="Mitsubishi">Mitsubishi</option>
+            </select>
+        </div>
+        <br>
+        <div>
+            <p> Model:
+            <input type="text" value="Enter Model" id="model"/>
+            </p>
+            <p> Price:
+            <input type="text" value="0" id="price"/>
+            </p>
+            <p> Quantity:
+            <input type="text" value="0" id="number"/>
+            </p>
+        </div>
+        <div>
+            <br>
+            <label> Pre-Tax: </label>
+            <label id="pretax"></label>
+            <br>            <br>
 
+            <label> Tax: </label>
+            <label id="tax"></label>
+            <br>            <br>
+
+            <label> Total: </label>
+            <label id="total"></label>
+
+            <hr>
+            <button onclick=calculate()>Submit</button>
+            <br>
+            <br>
+            <br>
+            <button onclick=reset()>Reset</button>
+
+        </div>
 </body>
 
-</html>
+<script>
+    taxpercent = 0.0825;
 
-<body>
-    <div class=”Cart-Container”></div>
-   </body>
-   <div class=”Header”>
-    <!--<h3 class=”Heading”>Shopping Cart</h3>-->
-    <h5 class=”Action”>Remove all</h5>
-    </div>
-    <div class=”Cart-Items”>
-        <div class=”image-box”>
-       <!-- <img src=”.png” style={{ height=”120px” }} />
-        </div>
-        <div class=”about”>
-        <h1 class=”title”>Ford</h1>
-        <h3 class=”subtitle”>250ml</h3>
-        <img src=”.png” style={{ height=”30px” }}/>
-        </div>-->
-        <div class=”counter”></div>
-        <div class=”prices”></div>
-        </div>
-        <div class=”counter”>
-            <div class=”btn”>+</div>
-            <div class=”count”>2</div>
-            <div class=”btn”>-</div>
-            </div>
-            <div class=”prices”>
-                <div class=”amount”>$</div>
-                <div class=”save”><u>Save for later</u></div>
-                <div class=”remove”><u>Remove</u></div>
-                </div>
-                <hr> 
- <div class=”checkout”>
- <div class=”total”>
- <div>
- <div class=”Subtotal”>Sub-Total</div>
- <div class=”items”>2 items</div>
- </div>
- <div class=”total-amount”>$</div>
- </div>
- <button class=”button”>Checkout</button>
- </div>
+    function calculate() {
+      model = document.getElementById('model').value;
+      price = document.getElementById('price').value;
+      quant = document.getElementById('number').value;
+
+      pretax = 0;
+      tax = 0;
+      total = 0;
+
+      pretax = Number(quant) * Number(price);
+      document.getElementById('pretax').innerHTML = pretax;
+      console.log(pretax);
+
+      tax = pretax * taxpercent;
+      document.getElementById('tax').innerHTML = tax;
+
+      total = quant * price + tax;
+      document.getElementById('total').innerHTML = total;
+    }
+
+    function reset() {
+      console.log('reseting');
+
+      document.getElementById('model').value = '';
+      document.getElementById('price').value = '';
+      document.getElementById('number').value = '';
+      document.getElementById('total').innerHTML = '';
+      document.getElementById('tax').innerHTML = '';
+      document.getElementById('pretax').innerHTML = '';
+    }
+  </script>
+
+ </html>
