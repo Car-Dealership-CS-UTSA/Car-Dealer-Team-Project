@@ -160,7 +160,6 @@ session_start();
     }
 
     function reset() {
-      console.log('reseting');
 
       document.getElementById('model').value = '';
       document.getElementById('price').value = '';
