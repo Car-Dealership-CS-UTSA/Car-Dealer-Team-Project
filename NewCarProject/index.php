@@ -101,22 +101,20 @@ session_start();
             <div class="carousel-item active">
                 <img src="imgs/img1.jpg" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
-                    <h5>First slide label</h5>
-                    <p>Some representative placeholder content for the first slide.</p>
+                    <h5>Porsche Panamera Turbo S</h5>
                 </div>
             </div>
             <div class="carousel-item">
                 <img src="imgs/img2.jpg" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
-                    <h5>Second slide label</h5>
-                    <p>Some representative placeholder content for the second slide.</p>
+                    <h5>BMW 4-Series</h5>
+                    
                 </div>
             </div>
             <div class="carousel-item">
                 <img src="imgs/img3.jpg" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
-                    <h5>Third slide label</h5>
-                    <p>Some representative placeholder content for the third slide.</p>
+                    <h5>Ford Explorer SUV</h5>
                 </div>
             </div>
         </div>
@@ -140,7 +138,7 @@ session_start();
             <div class="card-content">
                 <h2 class="card-title">About</h2>
                 <p class="card-body">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. car go vroom
+                    Who we are, our values, and the excellent service that we aim to provide!
                 </p>
                 <a href="about.php" class="button"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                         fill="currentColor" class="bi bi-buildings" viewBox="0 0 16 16">
@@ -155,7 +153,7 @@ session_start();
             <div class="card-content">
                 <h2 class="card-title">Catalog</h2>
                 <p class="card-body">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. car go vroom
+                    Check our vast catalog of cars to see what fts you best!
                 </p>
                 <a href="catalog.php" class="button"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                         fill="currentColor" class="bi bi-pen" viewBox="0 0 16 16">
@@ -168,7 +166,7 @@ session_start();
             <div class="card-content">
                 <h2 class="card-title">Search Nearby</h2>
                 <p class="card-body">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. car go vroom
+                    Search for the perfect car on sale and see what is close to you!
                 </p>
                 <a href="nearby.php" class="button"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                         fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
@@ -181,7 +179,7 @@ session_start();
             <div class="card-content">
                 <h2 class="card-title">Contact</h2>
                 <p class="card-body">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. car go vroom
+                    Contact us through phone, e-mail, or drop by for a visit during our open hours!
                 </p>
                 <a href="contact.php" class="button"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                         fill="currentColor" class="bi bi-phone" viewBox="0 0 16 16">
@@ -198,9 +196,6 @@ session_start();
     <!-- start footer -->
     <div id="footer" class="container">
         <footer class="d-flex  justify-content-between align-items-center py-3 my-4 border-top">
-            <ul class="nav col-md-8 ">
-                <li class="nav-item"><a href="#" class="nav-link px-6 text-muted ">Footer Text</a></li>
-            </ul>
         </footer>
     </div>
 </body>
