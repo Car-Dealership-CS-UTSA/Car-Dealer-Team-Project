@@ -89,7 +89,7 @@ session_start();
     </nav>
             <!-- end navbar -->
             <div>
-              <h1>About Us:</h1>
+              <h1 class="text-center">About Us:</h1>
               <p style="text-align: center">
                 Welcome to our car dealership website! We are dedicated to providing you
                 with the best car buying experience. We offer a wide selection of new
@@ -100,7 +100,7 @@ session_start();
               </p>
             </div>
             <hr />
-            <div>
+            <div class="text-center">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27788.381991502552!2d-98.52253475957136!3d29.471213699999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x865c5f7619be3df7%3A0x4e31c5bfde65156e!2sClear%20Choice%20Automotive!5e0!3m2!1sen!2sus!4v1682383378569!5m2!1sen!2sus"
                 width="600"
@@ -111,5 +111,9 @@ session_start();
                 referrerpolicy="no-referrer-when-downgrade"
               ></iframe>
             </div>
+        <div id="footer" class="container text-center">
+        <footer class="d-flex  align-items-center py-3 my-4 border-top">
+        </footer>
+    </div>
           </body>
         </html>
