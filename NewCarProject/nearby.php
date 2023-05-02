@@ -193,7 +193,6 @@ $conn->close();
     <div id="footer" class="container">
         <footer class="d-flex  justify-content-between align-items-center py-3 my-4 border-top">
             <ul class="nav col-md-8 ">
-                <li class="nav-item"><a href="#" class="nav-link px-6 text-muted ">Footer Text</a></li>
             </ul>
         </footer>
     </div>
